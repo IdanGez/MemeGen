@@ -5,24 +5,23 @@ var gMeme = {
     selectedImgId: 5,
     selectedLineIdx: 0,
     lines: [{
-        txt: 'Im the first line',
+        txt: 'Text Here',
         size: 30,
         align: 'left',
-        color: 'red',
+        color: 'black',
         strokeColor: 'white',
-        x: 250,
+        font:'impact' ,
+        x: 50,
         y: 50,
-        isActive: true
     },{
-        txt: 'Im the second line ',
+        txt: 'Text Here ',
         size: 30,
         align: 'left',
-        color: 'red',
+        color: 'black',
         strokeColor: 'white',
-        x: 250,
-        x: 250,
+        font:'impact' ,
+        x: 50,
         y: 500,
-        isActive: true
     }]
 }
 
@@ -31,24 +30,23 @@ function restartGmeme(){
         selectedImgId: 5,
         selectedLineIdx: 0,
         lines: [{
-            txt: 'Im the first line',
+            txt: 'Text Here',
             size: 30,
             align: 'left',
-            color: 'red',
+            color: 'black',
             strokeColor: 'white',
-            x: 250,
+            font:'impact' ,
+            x: 50,
             y: 50,
-            isActive: true
         },{
-            txt: 'Im the second line ',
+            txt: 'Text Here ',
             size: 30,
             align: 'left',
-            color: 'red',
+            color: 'black',
             strokeColor: 'white',
-            x: 250,
-            x: 250,
+            font:'impact' ,
+            x: 50,
             y: 500,
-            isActive: true
         }]
     }
 }
@@ -57,7 +55,9 @@ function setImg(memeImg) {
     gMeme.selectedImgId = memeImg
 
 }
-
+function setFont(value){
+    gMeme.lines[gMeme.selectedLineIdx].font = value;
+}
 
 function getImgId(elImgId) {
     return gImgs.find((img) => img.id === +elImgId);
@@ -70,21 +70,9 @@ function getMeme() {
     return gMeme;
 }
 
-// function setFillColor(color) {
-//     gFillColor = color;
-// }
-
 function deleteLine(){
-    // console.log('before - selectedLineIdx' , gMeme.selectedLineIdx)
-    // console.log( 'before - lines length' , gMeme.lines.length)
     gMeme.lines.splice(gMeme.selectedLineIdx,1)
     if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx--
-    // console.log('after- selectedLineIdx' , gMeme.selectedLineIdx)
-    // console.log( 'after- lines length'  , gMeme.lines.length)
-    // console.log(gMeme.selectedLineIdx)
-    // gMeme.selectedLineIdx === gMeme.lines.length;
-    // if (gMeme.selectedLineIdx < 0) gMeme.selectedLineIdx = 0
-
 }
 
 function setColor(color) {
@@ -117,33 +105,33 @@ function moveTextDown(){
     gMeme.lines[gMeme.selectedLineIdx].y +=5
 }
 
-function alineLeft(){
-    console.log('hi')
-    gMeme.lines[gMeme.selectedLineIdx].x = 150
+function  alignLeft(){
+    gMeme.lines[gMeme.selectedLineIdx].align = 'left'
+    gMeme.lines[gMeme.selectedLineIdx].x = 50
 }
-function alineCenter(){
-    console.log('hi')
-    gMeme.lines[gMeme.selectedLineIdx].x = 275
+function  alignCenter(){
+    gMeme.lines[gMeme.selectedLineIdx].align = 'center'
+    gMeme.lines[gMeme.selectedLineIdx].x = 250
 }
-function alineRight(){
-    console.log('hi')
+function  alignRight(){
+    gMeme.lines[gMeme.selectedLineIdx].align = 'right'
     gMeme.lines[gMeme.selectedLineIdx].x = 400
 }
 
 function addLine(){
     gMeme.lines.push({
-        txt: 'Extra Text Here!',
+        txt: 'Text Here',
         size: 30,
-        align: 'right',
-        color: 'blue',
+        align: 'left',
+        color: 'black',
+        strokeColor: 'white',
+        font:'impact' ,
         x: 250,
-        y: 350,
-        isActive: true
+        y: 250,
     })
 }
 
 function switchLine() {
-    // console.log(gMeme.selectedLineIdx)
 	gMeme.selectedLineIdx++;
 	if (gMeme.selectedLineIdx === gMeme.lines.length) gMeme.selectedLineIdx = 0;
 }

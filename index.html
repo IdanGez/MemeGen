@@ -20,15 +20,16 @@
                 <li class="nav-gallery flex">
                     <a onclick="showGallery()">Gallery</a>
                 </li>
-                <li class="nav-mems flex">My Memes</li>
+                <li class="nav-mems flex">Memes</li>
                 <li class="nav-about flex">About</li>
             </ul>
+            <button class="btn-menu" onclick="toggleMenu()">☰</button>
         </div>
     </header>
     <div class="search-bar flex">
         <div class="main-search-bar main-layout flex">
-            <div class="search-word ">
-                <input type="text" placeholder="enter search word">
+            <div class="search-word "><span>🔍 </span>
+                <input type="text" placeholder="Enter Search Word">
             </div>
             <div class="keywords ">
                 <span>Dog</span>
@@ -43,7 +44,7 @@
         <section class="grid-container"></section>
         <section class="meme-editor flex hide">
             <div class="canvas-container ">
-                <canvas width="550" height="550" style="cursor: crosshair"></canvas>
+                <canvas></canvas>
             </div>
             <div class="meme-controller ">
                 <div class="text-line"><input id="user-text1" type="text" value="enter your text here"
@@ -59,17 +60,34 @@
                         <input class="editor-input" type="color" name="color" id="color"
                             onchange="onSetStrokeColor(this.value)" />
                     </button></div>
-                <div class="arrow-up"><button onclick="onMoveTextUp()"><img src="./images/icons-imgs/arrow-up.png" alt=""></button></div>
-                <div class="arrow-down"><button onclick="onMoveTextDown()"><img src="./images/icons-imgs/arrow-down.png" alt=""></button></div>
-                <div class="align-left"><button onclick="onAlineLeft()"><img src="./images/icons-imgs/align-to-left.png" alt=""></button></div>
-                <div class="align-center"><button onclick="onAlineCenter()"><img src="./images/icons-imgs/center-text-alignment.png" alt=""></button></div>
-                <div class="align-right"><button onclick="onAlineRight()"><img src="./images/icons-imgs/align-to-right.png" alt=""></button></div>
-                <div class="font-style"><button>Font-Style</button></div>
+                <div class="arrow-up"><button onclick="onMoveTextUp()"><img src="./images/icons-imgs/arrow-up.png"
+                            alt=""></button></div>
+                <div class="arrow-down"><button onclick="onMoveTextDown()"><img src="./images/icons-imgs/arrow-down.png"
+                            alt=""></button></div>
+                <div class="align-left"><button onclick="onAlignLeft()"><img src="./images/icons-imgs/align-to-left.png"
+                            alt=""></button></div>
+                <div class="align-center"><button onclick="onAlignCenter()"><img
+                            src="./images/icons-imgs/center-text-alignment.png" alt=""></button></div>
+                <div class="align-right"><button onclick="onAlignRight()"><img
+                            src="./images/icons-imgs/align-to-right.png" alt=""></button></div>
+                <div class="font-style">
+                    <select name="font" id="font" onchange="onSetFont(this.value)">
+                        <option value="impact">Impact</option>
+                        <option value="Serif">Serif</option>
+                        <option value="Sans-serif">Sans-serif</option>
+                        <option value="Monospace">Monospace</option>
+                        <option value="Cursive">Cursive</option>
+                        <option value="Helvetica">Helvetica</option>
+                    </select>
+                </div>
                 <!-- <div class="stroke-color"><button><img src="./images/icons-imgs/text stroke.png" alt=""></button></div> -->
                 <div class="sticker"><button>Sticker</button></div>
                 <div class="share"><button>Share</button></div>
-                <div class="download"><button>Download</button></div>
-                <div class="delete-line"><button onclick="onDeleteLine()"><img src="./images/icons-imgs/trash.png" alt=""></button></div>
+                <div class="save-to-mymeme"><button>Save to My Memes</button></div>
+                <div class="download"><button><a href="#" class="btn" onclick="downloadMeme(this)"
+                            download="my-meme.jpg">Download</a></button></div>
+                <div class="delete-line"><button onclick="onDeleteLine()"><img src="./images/icons-imgs/trash.png"
+                            alt=""></button></div>
                 <div class="increase-font"><button onclick="onIncreaseFont()"><img
                             src="./images/icons-imgs/increase.png" alt=""></button></div>
                 <div class="decrease-font"><button onclick="onDecreaseFont()"><img
@@ -81,9 +99,29 @@
             </div>
 
         </section>
+        <div class="dynamic-text-helper"></div>
     </main>
-    <footer>
-        <div class="main-footer main-layout"></div>
+    <section class="about flex">
+        <section class="about-myinfo" id="me" style="padding: 0px;">
+            <div class="my-info">
+                <img class="mx-auto rounded-circle" src="./images/idan/1.jpg" alt="">
+                <h4>Idan Gez</h4>
+                <p class="text-muted">Coding Academy <br>
+                    Full-Stack Developer <br>
+                    Student</p>
+            </div>
+        </section>
+    </section>
+    <section class="space-helper hide"></section>
+    <footer class="flex">
+        <div class="main-footer main-layout flex">
+            <div class="logo flex">
+                <a><img src="./images/web-logo/logo.png" alt=""></a>
+            </div>
+            <div class="coffee-rights flex"> Coffee-Rights ☕ I.G.
+            </div>
+        </div>
+
 
 
 
