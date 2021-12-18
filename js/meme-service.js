@@ -15,7 +15,7 @@ var gMeme = {
         strokeColor: 'white',
         font:'impact' ,
         x: gElCanvas.width*0.1,
-        y: gElCanvas.height*0.15,
+        y: gElCanvas.height*0.1,
     },{
         txt: 'Text Here ',
         size: 30,
@@ -24,7 +24,7 @@ var gMeme = {
         strokeColor: 'white',
         font:'impact' ,
         x: gElCanvas.width*0.1,
-        y: gElCanvas.height*0.85,
+        y: gElCanvas.height*0.80,
     }]
 }
 
@@ -40,7 +40,7 @@ function restartGmeme(){
             strokeColor: 'white',
             font:'impact' ,
             x: gElCanvas.width*0.1,
-            y: gElCanvas.height*0.15,
+            y: gElCanvas.height*0.1,
         },{
             txt: 'Text Here ',
             size: 30,
@@ -49,7 +49,7 @@ function restartGmeme(){
             strokeColor: 'white',
             font:'impact' ,
             x: gElCanvas.width*0.1,
-            y: gElCanvas.height*0.85,
+            y: gElCanvas.height*0.8,
         }]
     }
 }
@@ -110,7 +110,8 @@ function moveTextUp(){
     gMeme.lines[gMeme.selectedLineIdx].y -=5;
 }
 function moveTextDown(){
-    if (gMeme.lines[gMeme.selectedLineIdx].y === 530) return;
+    console.log(gMeme.lines[gMeme.selectedLineIdx].y)
+    if (gMeme.lines[gMeme.selectedLineIdx].y === gElCanvas.height-20) return;
     gMeme.lines[gMeme.selectedLineIdx].y +=5;
 }
 
