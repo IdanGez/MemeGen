@@ -7,6 +7,11 @@
 * {
     box-sizing: border-box;
 }
+button {
+    cursor: pointer;
+
+}
+
 
 body {
     background-color: aliceblue;
@@ -49,6 +54,8 @@ ul {
     margin: 0;
     padding: 0;
     align-items: center;
+    cursor: pointer;
+
 }
 
 .download .btn {
@@ -150,6 +157,8 @@ main {
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 5px;
+    cursor: pointer;
+
 }
 
 .grid-container img{
@@ -496,10 +505,11 @@ footer{
 }
 
 
-.main-layout {
-    min-width: 420px;
+
+ .main-layout {
+    min-width: 400px;
     margin-inline: auto;
-}
+} 
 
 .hide {
 	opacity: 0;

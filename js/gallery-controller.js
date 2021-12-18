@@ -14,7 +14,7 @@ function renderMyMemes() {
     var savedMemes = loadFromStorage(STORAGE_KEY);
     const strHTMLs = savedMemes.map((meme) => {
         return `<a href="${meme.url}" download="my-meme.jpg"><img src="${meme.url}" alt=""></a>
-        `;
+        `
     });
     document.querySelector('.grid-container').innerHTML = strHTMLs;
 }

@@ -14,8 +14,8 @@ var gMeme = {
         color: 'black',
         strokeColor: 'white',
         font:'impact' ,
-        x: 50,
-        y: 50,
+        x: gElCanvas.width*0.1,
+        y: gElCanvas.height*0.15,
     },{
         txt: 'Text Here ',
         size: 30,
@@ -23,8 +23,8 @@ var gMeme = {
         color: 'black',
         strokeColor: 'white',
         font:'impact' ,
-        x: 50,
-        y: 500,
+        x: gElCanvas.width*0.1,
+        y: gElCanvas.height*0.85,
     }]
 }
 
@@ -39,8 +39,8 @@ function restartGmeme(){
             color: 'black',
             strokeColor: 'white',
             font:'impact' ,
-            x: 50,
-            y: 50,
+            x: gElCanvas.width*0.1,
+            y: gElCanvas.height*0.15,
         },{
             txt: 'Text Here ',
             size: 30,
@@ -48,8 +48,8 @@ function restartGmeme(){
             color: 'black',
             strokeColor: 'white',
             font:'impact' ,
-            x: 50,
-            y: 500,
+            x: gElCanvas.width*0.1,
+            y: gElCanvas.height*0.85,
         }]
     }
 }
@@ -116,15 +116,15 @@ function moveTextDown(){
 
 function  alignLeft(){
     gMeme.lines[gMeme.selectedLineIdx].align = 'left';
-    gMeme.lines[gMeme.selectedLineIdx].x = 50;
+    gMeme.lines[gMeme.selectedLineIdx].x = gElCanvas.width*.1;
 }
 function  alignCenter(){
     gMeme.lines[gMeme.selectedLineIdx].align = 'center';
-    gMeme.lines[gMeme.selectedLineIdx].x = 250;
+    gMeme.lines[gMeme.selectedLineIdx].x = gElCanvas.width / 2;
 }
 function  alignRight(){
     gMeme.lines[gMeme.selectedLineIdx].align = 'right';
-    gMeme.lines[gMeme.selectedLineIdx].x = 400;
+    gMeme.lines[gMeme.selectedLineIdx].x = (gElCanvas.width)*.85;
 }
 
 function addLine(){
@@ -135,8 +135,8 @@ function addLine(){
         color: 'black',
         strokeColor: 'white',
         font:'impact' ,
-        x: 250,
-        y: 250,
+        x: gElCanvas.width*.1,
+        y: gElCanvas.height/2,
     });
 }
 
