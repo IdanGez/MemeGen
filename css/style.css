@@ -1,10 +1,8 @@
 /* FONTS */
-/* Fonts */
 @font-face {
 	font-family: impact;
 	src: url(/fonts/impact.ttf);
 }
-
 
 * {
     box-sizing: border-box;
@@ -25,7 +23,6 @@ main {
 
 }
     
-
 .main-header{
     justify-content: space-between;
     height: 50px;
@@ -54,6 +51,11 @@ ul {
     align-items: center;
 }
 
+.download .btn {
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+}
 li {
     list-style: none;
     text-decoration: none;
@@ -99,14 +101,11 @@ ul :hover{
     height: inherit;
 }
 
-
-
 .main-search-bar{
     height: 40px;
     justify-content: space-between;
     align-items: center;   
     flex-direction: column;
-
 }
 
 .search-bar{
@@ -125,7 +124,6 @@ ul :hover{
 }
 
 .search-bar input {
- /* width: 200px; */
  border: none;
  background-color: inherit;
  font-size: 1.2rem;
@@ -154,7 +152,6 @@ main {
     padding: 5px;
 }
 
-
 .grid-container img{
     text-align: center;
 }
@@ -174,8 +171,6 @@ canvas {
     margin-right: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
-    /* margin-right: 25px; */
-    /* object-fit: contain; */
 }
 
 .meme-editor{
@@ -186,7 +181,6 @@ canvas {
     flex-direction: column;
 }
 
-
 .meme-editor img{
     height: 90%;
     width:  90%;
@@ -195,14 +189,15 @@ canvas {
 
 .meme-controller {
     display: grid;
-    grid-template: repeat(6,1fr) / 70px 70px 70px 70px 70px ;
+    grid-template: 2fr repeat(3,1fr) 2fr / 1fr 1fr 1fr 1fr 1fr ;
+    /* grid-template: repeat(5,1fr) 2fr / 70px 70px 70px 70px 70px ; */
     grid-template-areas: 
     "text-line text-line text-line text-line text-line " 
     "arrow-up arrow-down switch add-line delete"
     "font-up font-down align-left align-center align-right "
     "font-style  font-style font-style stroke-color font-color"
-    "sticker sticker sticker sticker sticker"
-    "share save save download download";
+    /* "upload upload upload upload upload" */
+    "share share share share share";
     gap: 10px;
     width: 50%;
     margin: auto;    
@@ -305,25 +300,23 @@ canvas {
     grid-area: font-color;
 }
 
-.sticker {
-    grid-area: sticker;
+/* .upload-img {
+    grid-area: upload;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+    font-size: 30px;
+    text-transform: capitalize;
+    background-color: rgb(255, 255, 255)
 }
+
+.upload-img input{
+    text-align: center;
+} */
 
 .share {
     grid-area: share;
-}
-
-.download {
-    grid-area: download;
-}
-
-.download a{
-    text-decoration: none;
-    color: inherit;
-}
-
-.save-to-mymeme {
-    grid-area: save;
 }
 
 .editor-btn {
@@ -382,6 +375,105 @@ left: 50%;
     text-align: center;
 }
 
+/* MODALS */
+.main-screen {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.6s;
+}
+
+body.menu-open .main-screen  {
+	pointer-events: auto;
+	opacity: 1;
+    z-index: 1;
+} 
+
+.about-modal {
+position: fixed;
+display: flex;
+flex-direction: column; 
+justify-content: space-around;
+z-index: 5;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+height: 380px;
+width:  350px;
+text-align: center;
+align-items: center;
+transition: right 1s;
+background-color: rgb(209, 209, 209);
+border: 2px solid #ff7f00 ;
+border-radius: 25px;
+}
+
+body.about-modal-open .about-modal {
+	pointer-events: auto;
+	opacity: 1;
+    z-index: 1;
+
+}
+
+.share-modal {
+position: fixed;
+display: flex;
+flex-direction: column; 
+justify-content: space-around;
+z-index: 5;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+height: 200px;
+width: 250px;
+text-align: center;
+align-items: center;
+transition: right 1s;
+background-color: rgb(209, 209, 209);
+border: 2px solid #ff7f00 ;
+border-radius: 25px;
+}
+
+.share-modal button{
+        width: 100%;
+        height: 100%;
+        border: 0;
+        border-radius: 10px;
+        font-size: 22px;
+        text-transform: capitalize;
+    
+}
+.share-modal button:hover{
+-webkit-box-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 1px 0px 0px 0px rgba(0,0,0,0); 
+box-shadow: #FFF 0 -1px 4px, #ff0 0 -2px 10px, #ff8000 0 -10px 20px, red 0 -18px 40px, 1px 0px 0px 0px rgba(0,0,0,0);
+}
+
+.modal-screen {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.35);
+	cursor: pointer;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.6s;
+}
+
+body.modal-open .modal-screen  {
+	pointer-events: auto;
+	opacity: 1;
+    z-index: 1;
+
+} 
+
 /*  FOOTER  */
 
 footer{
@@ -397,8 +489,6 @@ footer{
     justify-content: center;
  }
 
-
-
 /* HELPERS */
 
 .flex{
@@ -407,7 +497,6 @@ footer{
 
 
 .main-layout {
-    /* width:  */
     min-width: 420px;
     margin-inline: auto;
 }
@@ -426,8 +515,8 @@ footer{
 	top: -150%;
 }
 .space-helper {
-    height: 400px;
-    width: 1500px;
+    height: 50px;
+    min-width: 420px;
     background-color: rgb(209, 209, 209);
     margin: 0 auto;
 }
@@ -437,7 +526,6 @@ footer{
 @media (max-width:550px) {
     header {
        z-index: 2;
-       /* position: fixed; */
        width: 100vw;
    }
    
@@ -453,7 +541,7 @@ footer{
        width: 82vw;
        transform: translateX(100%);
    }
-   body.burger-menu .nav-list {
+   body.menu-open .nav-list {
        box-shadow: 0px 0px 30px rgb(0 0 0 / 30%);
        transform: translateX(0);
    }
@@ -531,14 +619,14 @@ body {
 
 .meme-controller {
     display: grid;
-    grid-template: repeat(6,1fr) / 1fr 1fr 1fr 1fr 1fr ;
+    grid-template: 2fr repeat(3,1fr) 2fr / 1fr 1fr 1fr 1fr 1fr ;
     grid-template-areas: 
     "text-line text-line text-line text-line text-line " 
     "arrow-up arrow-down switch add-line delete"
     "font-up font-down align-left align-center align-right "
     "font-style  font-style font-style stroke-color font-color"
-    "sticker sticker sticker sticker sticker"
-    "share save save save download";
+    /* "upload upload upload upload upload" */
+    "share share share share share";
     gap: 10px;
     width: 50%;
     margin-left: 5px;
@@ -550,13 +638,17 @@ body {
 .meme-editor img{
     height: 70%;
     width:  70%;
-   /* object-fit: contain; */  
 }
 .meme-controller button{
     font-size: 30px;
 }
 .meme-editor{
     margin: 50px auto;
+}
+
+.space-helper {
+    height: 400px;
+    width: 1500px;
 }
 }
 

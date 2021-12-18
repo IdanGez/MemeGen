@@ -75,12 +75,12 @@ var gKeywords = [
         keyword1: 'funny',
         keyword2: 'movies'
     },
-]
+];
 
 
 function createGallery() {
     gImgs = gKeywords.map((keyword1,keyword2) =>{
-        return createImg(keyword1,keyword2)
+        return createImg(keyword1,keyword2);
     });
 }
 
