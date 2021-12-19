@@ -19,3 +19,21 @@ function renderMyMemes() {
     document.querySelector('.grid-container').innerHTML = strHTMLs.join('');
 }
 
+function onSetKeyword(elKeyword) {
+	console.log(elKeyword);
+	if (elKeyword === 'all') {
+		renderGallery();
+		showGallery();
+	}
+	var filteredImgs = gImgs.filter(
+		(img) =>
+			img.keyword.keyword1 === elKeyword ||
+			img.keyword.keyword2 === elKeyword
+	);
+	const strHTMLs = filteredImgs.map((img) => {
+		return `
+	    <div id="${img.id}" onclick="onImgSelect(this)" class="img img${img.id}"><img src="${img.url}" alt=""></div>
+	    `;
+	});
+	document.querySelector('.grid-container').innerHTML = strHTMLs.join('');
+}

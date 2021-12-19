@@ -9,9 +9,12 @@
     <title>Sprint2 - I.G. - MemeGen</title>
 </head>
 
-<body onload="onInit()"> 
+<body onload="onInit()">
     <div class="main-screen" onclick="toggleMenu()"></div>
     <div class="modal-screen" onclick="toggleModal()"></div>
+
+    <!-- HEADER -->
+
     <header class="header flex">
         <div class="main-header flex main-layout">
             <div class="logo flex">
@@ -31,48 +34,67 @@
             <button class="btn-menu" onclick="toggleMenu()">☰</button>
         </div>
     </header>
-    <div class="search-bar flex">
+
+    <!-- SEARCH-BAR  -->
+
+    <div class="search-bar main-layout flex">
         <div class="main-search-bar main-layout flex">
             <div class="search-word "><span>🔍 </span>
-                <input type="text" 
-                placeholder="Search (under-construction)">
+                <input type="text" name="keywords" list="keywords" onchange="onSetKeyword(value)"
+                    placeholder="Search">
+                    <datalist id="keywords">
+                    <option value="all"></option>
+                    <option value="funny"></option>
+                    <option value="politicsl"></option>
+                    <option value="animal"></option>
+                    <option value="cute"></option>
+                    <option value="movie"></option>
+                </datalist>
             </div>
-            <!-- <div class="keywords ">
-                <span>Dog</span>
-                <span>Baby</span>
-                <span>Politicians</span>
-                <span>Sport</span>
-                <span>Cinema</span>
-            </div> -->
+        </div>
+        <div class="keywords main-layout">
+            <span onclick="renderGallery()">All</span>
+            <span onclick="onSetKeyword('funny')">Celebrity </span>
+            <span onclick="onSetKeyword('politics')">Politics </span>
+            <span onclick="onSetKeyword('animal')">Animal</span>
+            <span onclick="onSetKeyword('cute')">Cute </span>
+            <span onclick="onSetKeyword('movie')">Baby</span>
         </div>
     </div>
+
+    <!-- MAIN  -->
+
     <main class="main main-layout flex">
         <section class="grid-container"></section>
         <section class="meme-editor flex hide">
             <div class="canvas-container ">
                 <canvas></canvas>
             </div>
+
+    <!-- MEME EDITOR -->
+
             <div class="meme-controller ">
                 <div class="text-line">
-                    <input id="user-text1" type="text" placeholder="enter your text here" onfocus="this.placeholder = ''"
-                        oninput="onSetText(this.value)" /></div>
+                    <input id="user-text1" type="text" placeholder="enter your text here"
+                        onfocus="this.placeholder = ''" oninput="onSetText(this.value)" />
+                </div>
                 <div class="font-color"> <button class="editor-btn font-color">
                         <label for="color"><img class="editor-img" src="./images/icons-imgs/paint-board-and-brush.png"
                                 alt="" /></label>
                         <input class="editor-input" type="color" name="color" id="color"
-                        oninput="onSetColor(this.value)" />
+                            oninput="onSetColor(this.value)" />
                     </button></div>
                 <div class="stroke-color"> <button class="editor-btn stroke-color">
                         <label for="color"><img src="./images/icons-imgs/text stroke.png" alt=""></label>
                         <input class="editor-input" type="color" name="color" id="color"
-                        oninput="onSetStrokeColor(this.value)" />
+                            oninput="onSetStrokeColor(this.value)" />
                     </button></div>
                 <div class="arrow-up"><button onclick="onMoveText('up')"><img src="./images/icons-imgs/arrow-up.png"
                             alt=""></button></div>
-                <div class="arrow-down"><button onclick="onMoveText('down')"><img src="./images/icons-imgs/arrow-down.png"
-                            alt=""></button></div>
-                <div class="align-left"><button onclick="onAlignText('left')"><img src="./images/icons-imgs/align-to-left.png"
-                            alt=""></button></div>
+                <div class="arrow-down"><button onclick="onMoveText('down')"><img
+                            src="./images/icons-imgs/arrow-down.png" alt=""></button></div>
+                <div class="align-left"><button onclick="onAlignText('left')"><img
+                            src="./images/icons-imgs/align-to-left.png" alt=""></button></div>
                 <div class="align-center"><button onclick="onAlignText('center')"><img
                             src="./images/icons-imgs/center-text-alignment.png" alt=""></button></div>
                 <div class="align-right"><button onclick="onAlignText('right')"><img
@@ -87,24 +109,24 @@
                         <option value="Helvetica">Helvetica</option>
                     </select>
                 </div>
-                                <!-- <div class="upload-img">Upload your image:<input type="file" class="file-input btn" name="image"
-                        onchange="onImgInput(event)" /></div> -->
                 <div class="share"><button onclick="renderShareModal()"> Download / Save To My Memes</button></div>
                 <div class="delete-line"><button onclick="onDeleteLine()"><img src="./images/icons-imgs/trash.png"
                             alt=""></button></div>
-                <div class="increase-font"><button  onclick="onSetFontSize('inc')"><img
+                <div class="increase-font"><button onclick="onSetFontSize('inc')"><img
                             src="./images/icons-imgs/increase.png" alt=""></button></div>
-                <div class="decrease-font"><button  onclick="onSetFontSize('dec')"><img
+                <div class="decrease-font"><button onclick="onSetFontSize('dec')"><img
                             src="./images/icons-imgs/decrease.png" alt=""></button></div>
                 <div class="add-line"><button onclick="onAddLine()"><img src="./images/icons-imgs/add.png"
                             alt=""></button></div>
                 <div class="switch-line"><button onclick="onSwitchLine()"><img src="./images/icons-imgs/switch.png"
                             alt=""></button></div>
             </div>
-
         </section>
         <div class="dynamic-text-helper">helptext</div>
     </main>
+
+    <!-- ABOUT -->
+
     <section class="about flex">
         <section class="about-myinfo" id="me" style="padding: 0px;">
             <div class="my-info">
@@ -119,6 +141,9 @@
     <section class="space-helper hide"></section>
     <div class="modal hide"></div>
     <div class="flash-modal">Meme Added To My Memes</div>
+
+    <!-- FOOTER -->
+
     <footer class="flex">
         <div class="main-footer main-layout flex">
             <div class="logo flex">

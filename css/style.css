@@ -105,18 +105,19 @@ ul :hover{
 }
 
 .main-search-bar{
-    height: 40px;
+    height: 30px;
     justify-content: space-between;
-    align-items: center;   
+    align-items: left;   
     flex-direction: column;
 }
 
 .search-bar{
     background-color: aliceblue;
-    font-size: 20px;
+    font-size: 22px;
     justify-content: space-between;
     align-items: center;   
-    gap: 20px;
+    gap: 10px;
+    flex-direction: column;
 }
 
 .search-word{
@@ -124,6 +125,7 @@ ul :hover{
  border: none;
  border-bottom: black solid 2px;
  background-color: inherit;
+ width: 65%;
 }
 
 .search-bar input {
@@ -136,10 +138,15 @@ ul :hover{
     margin-right: 0 
 }
 
+.keywords span:hover{
+    cursor: pointer;
+
+}
+
 /* MAIN  */
 
 main {
-    margin-top: 20px;
+    margin-top: 10px;
     background-color: rgb(209, 209, 209);
     justify-content: center;
 }
@@ -618,12 +625,9 @@ img {
 }
 
 .search-bar{
-height: 60px;
+height: 50px;
 padding-left: 35px;
-}
-
-.main-search-bar{
-    flex-direction: row;  
+flex-direction: row;
 }
     
 .keywords span {
@@ -690,11 +694,14 @@ body {
 
 .flash-modal.open {
 	font-size: 2rem;
-	/* border-radius: 15px; */
 	top:35%;
 	right: 35%;
-	/* transform: translate(-50%, -50%); */
 }
+
+.search-word{
+
+    width: 36%;
+   }
 
 }
 
