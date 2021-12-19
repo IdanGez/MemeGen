@@ -18,7 +18,7 @@ function loadImageFromInput(ev, onImageReady) {
 
 function renderImg(img) {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height);
-}   
+}
 
 function downloadMeme() {
     var meme = getMeme();

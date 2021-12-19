@@ -2,7 +2,7 @@
 
 function renderGallery() {
     showGallery();
-    const strHtmls = gImgs.map((img) => {
+    const strHtmls = getgImgs().map((img) => {
         return `
         <div id="${img.id}" onclick="onImgSelect(this.id)" class="grid-img img${img.id}"><img src="${img.url}"alt=""></div>`
     });
@@ -16,6 +16,6 @@ function renderMyMemes() {
         return `<a href="${meme.url}" download="my-meme.jpg"><img src="${meme.url}" alt=""></a>
         `
     });
-    document.querySelector('.grid-container').innerHTML = strHTMLs;
+    document.querySelector('.grid-container').innerHTML = strHTMLs.join('');
 }
 

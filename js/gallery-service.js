@@ -77,18 +77,21 @@ var gKeywords = [
     },
 ];
 
-
 function createGallery() {
-    gImgs = gKeywords.map((keyword1,keyword2) =>{
-        return createImg(keyword1,keyword2);
+    gImgs = gKeywords.map((keyword) =>{
+        return createImg(keyword);
     });
 }
 
-function createImg(key1, key2) {
+function createImg(keyword) {
     return {
         id: gNextIdx,
         url: `images/sq-img/${gNextIdx++}.jpg`,
-        keywords: [key1, key2],
+        keyword: keyword,
     }
 
+}
+
+function getgImgs(){
+    return gImgs;
 }

@@ -9,7 +9,7 @@
     <title>Sprint2 - I.G. - MemeGen</title>
 </head>
 
-<body onload="onInit()">
+<body onload="onInit()"> 
     <div class="main-screen" onclick="toggleMenu()"></div>
     <div class="modal-screen" onclick="toggleModal()"></div>
     <header class="header flex">
@@ -34,7 +34,8 @@
     <div class="search-bar flex">
         <div class="main-search-bar main-layout flex">
             <div class="search-word "><span>🔍 </span>
-                <input type="text" placeholder="Search (under-construction)">
+                <input type="text" 
+                placeholder="Search (under-construction)">
             </div>
             <!-- <div class="keywords ">
                 <span>Dog</span>
@@ -52,28 +53,29 @@
                 <canvas></canvas>
             </div>
             <div class="meme-controller ">
-                <div class="text-line"><input id="user-text1" type="text" value="enter your text here"
+                <div class="text-line">
+                    <input id="user-text1" type="text" placeholder="enter your text here" onfocus="this.placeholder = ''"
                         oninput="onSetText(this.value)" /></div>
                 <div class="font-color"> <button class="editor-btn font-color">
                         <label for="color"><img class="editor-img" src="./images/icons-imgs/paint-board-and-brush.png"
                                 alt="" /></label>
                         <input class="editor-input" type="color" name="color" id="color"
-                            onchange="onSetColor(this.value)" />
+                        oninput="onSetColor(this.value)" />
                     </button></div>
                 <div class="stroke-color"> <button class="editor-btn stroke-color">
                         <label for="color"><img src="./images/icons-imgs/text stroke.png" alt=""></label>
                         <input class="editor-input" type="color" name="color" id="color"
-                            onchange="onSetStrokeColor(this.value)" />
+                        oninput="onSetStrokeColor(this.value)" />
                     </button></div>
-                <div class="arrow-up"><button onclick="onMoveTextUp()"><img src="./images/icons-imgs/arrow-up.png"
+                <div class="arrow-up"><button onclick="onMoveText('up')"><img src="./images/icons-imgs/arrow-up.png"
                             alt=""></button></div>
-                <div class="arrow-down"><button onclick="onMoveTextDown()"><img src="./images/icons-imgs/arrow-down.png"
+                <div class="arrow-down"><button onclick="onMoveText('down')"><img src="./images/icons-imgs/arrow-down.png"
                             alt=""></button></div>
-                <div class="align-left"><button onclick="onAlignLeft()"><img src="./images/icons-imgs/align-to-left.png"
+                <div class="align-left"><button onclick="onAlignText('left')"><img src="./images/icons-imgs/align-to-left.png"
                             alt=""></button></div>
-                <div class="align-center"><button onclick="onAlignCenter()"><img
+                <div class="align-center"><button onclick="onAlignText('center')"><img
                             src="./images/icons-imgs/center-text-alignment.png" alt=""></button></div>
-                <div class="align-right"><button onclick="onAlignRight()"><img
+                <div class="align-right"><button onclick="onAlignText('right')"><img
                             src="./images/icons-imgs/align-to-right.png" alt=""></button></div>
                 <div class="font-style">
                     <select name="font" id="font" onchange="onSetFont(this.value)">
@@ -90,9 +92,9 @@
                 <div class="share"><button onclick="renderShareModal()"> Download / Save To My Memes</button></div>
                 <div class="delete-line"><button onclick="onDeleteLine()"><img src="./images/icons-imgs/trash.png"
                             alt=""></button></div>
-                <div class="increase-font"><button onclick="onIncreaseFont()"><img
+                <div class="increase-font"><button  onclick="onSetFontSize('inc')"><img
                             src="./images/icons-imgs/increase.png" alt=""></button></div>
-                <div class="decrease-font"><button onclick="onDecreaseFont()"><img
+                <div class="decrease-font"><button  onclick="onSetFontSize('dec')"><img
                             src="./images/icons-imgs/decrease.png" alt=""></button></div>
                 <div class="add-line"><button onclick="onAddLine()"><img src="./images/icons-imgs/add.png"
                             alt=""></button></div>
@@ -101,7 +103,7 @@
             </div>
 
         </section>
-        <div class="dynamic-text-helper"></div>
+        <div class="dynamic-text-helper">helptext</div>
     </main>
     <section class="about flex">
         <section class="about-myinfo" id="me" style="padding: 0px;">
@@ -116,6 +118,7 @@
     </section>
     <section class="space-helper hide"></section>
     <div class="modal hide"></div>
+    <div class="flash-modal">Meme Added To My Memes</div>
     <footer class="flex">
         <div class="main-footer main-layout flex">
             <div class="logo flex">
@@ -125,12 +128,12 @@
             </div>
         </div>
     </footer>
-    <script src="./js/storage-service.js"></script>
-    <script src="./js/meme-service.js"></script>
-    <script src="./js/gallery-service.js"></script>
-    <script src="./js/upload-download-service.js"></script>
-    <script src="./js/gallery-controller.js"></script>
-    <script src="./js/meme-controller.js"></script>
+    <script src="js/storage-service.js"></script>
+    <script src="js/gallery-service.js"></script>
+    <script src="js/meme-service.js"></script>
+    <script src="js/upload-download-service.js"></script>
+    <script src="js/gallery-controller.js"></script>
+    <script src="js/meme-controller.js"></script>
 </body>
 
 </html>
