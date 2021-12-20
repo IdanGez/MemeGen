@@ -12,9 +12,6 @@
 <body onload="onInit()">
     <div class="main-screen" onclick="toggleMenu()"></div>
     <div class="modal-screen" onclick="toggleModal()"></div>
-
-    <!-- HEADER -->
-
     <header class="header flex">
         <div class="main-header flex main-layout">
             <div class="logo flex">
@@ -34,9 +31,6 @@
             <button class="btn-menu" onclick="toggleMenu()">☰</button>
         </div>
     </header>
-
-    <!-- SEARCH-BAR  -->
-
     <div class="search-bar main-layout flex">
         <div class="main-search-bar main-layout flex">
             <div class="search-word "><span>🔍 </span>
@@ -45,10 +39,9 @@
                     <datalist id="keywords">
                     <option value="all"></option>
                     <option value="funny"></option>
-                    <option value="politicsl"></option>
+                    <option value="politics"></option>
                     <option value="animal"></option>
                     <option value="cute"></option>
-                    <option value="movie"></option>
                 </datalist>
             </div>
         </div>
@@ -58,21 +51,14 @@
             <span onclick="onSetKeyword('politics')">Politics </span>
             <span onclick="onSetKeyword('animal')">Animal</span>
             <span onclick="onSetKeyword('cute')">Cute </span>
-            <span onclick="onSetKeyword('movie')">Baby</span>
         </div>
     </div>
-
-    <!-- MAIN  -->
-
     <main class="main main-layout flex">
         <section class="grid-container"></section>
         <section class="meme-editor flex hide">
             <div class="canvas-container ">
                 <canvas></canvas>
             </div>
-
-    <!-- MEME EDITOR -->
-
             <div class="meme-controller ">
                 <div class="text-line">
                     <input id="user-text1" type="text" placeholder="enter your text here"
@@ -109,6 +95,8 @@
                         <option value="Helvetica">Helvetica</option>
                     </select>
                 </div>
+                <!-- <div class="upload-img">Upload your image:<input type="file" class="file-input btn" name="image"
+                        onchange="onImgInput(event)" /></div> -->
                 <div class="share"><button onclick="renderShareModal()"> Download / Save To My Memes</button></div>
                 <div class="delete-line"><button onclick="onDeleteLine()"><img src="./images/icons-imgs/trash.png"
                             alt=""></button></div>
@@ -121,12 +109,10 @@
                 <div class="switch-line"><button onclick="onSwitchLine()"><img src="./images/icons-imgs/switch.png"
                             alt=""></button></div>
             </div>
+
         </section>
         <div class="dynamic-text-helper">helptext</div>
     </main>
-
-    <!-- ABOUT -->
-
     <section class="about flex">
         <section class="about-myinfo" id="me" style="padding: 0px;">
             <div class="my-info">
@@ -141,9 +127,6 @@
     <section class="space-helper hide"></section>
     <div class="modal hide"></div>
     <div class="flash-modal">Meme Added To My Memes</div>
-
-    <!-- FOOTER -->
-
     <footer class="flex">
         <div class="main-footer main-layout flex">
             <div class="logo flex">

@@ -32,8 +32,7 @@ function onSetKeyword(elKeyword) {
 	);
 	const strHTMLs = filteredImgs.map((img) => {
 		return `
-	    <div id="${img.id}" onclick="onImgSelect(this)" class="img img${img.id}"><img src="${img.url}" alt=""></div>
-	    `;
+        <div id="${img.id}" onclick="onImgSelect(this.id)" class="grid-img img${img.id}"><img src="${img.url}"alt=""></div>`
 	});
 	document.querySelector('.grid-container').innerHTML = strHTMLs.join('');
 }
